@@ -291,7 +291,7 @@ textarea:focus{
 <!-- PAGE 4 -->
 <div class="page hidden" id="page4">
     <div class="box">
-        <h1>Makasih Yaa Udah Maafin 🤍</h1>
+        <h1>Makasih Yaa Udah Maafin</h1>
         <div class="divider"></div>
         <p>Aku bakal lebih peka dan nggak bikin kamu bad mood lagi 🥺</p>
         <button onclick="nextPage(6)">Masuk Healing Room</button>
@@ -303,7 +303,7 @@ textarea:focus{
     <div class="box">
         <h1>Yah Masih Nggak Maafin 😭</h1>
         <div class="divider"></div>
-        <p>Gapapa... Aku tetap minta maaf dan tetap peduli kok.</p>
+        <p>Yaudaa Gapapa Kalo Belum Dimaafin</p>
         <button onclick="nextPage(6)">Masuk Healing Room</button>
     </div>
 </div>
@@ -318,7 +318,6 @@ textarea:focus{
     <!-- MENU BUTTONS -->
     <div class="option-container" style="margin-bottom:40px;">
         <div class="option" onclick="showSection('write')">Write & Release</div>
-        <div class="option" onclick="showSection('pukul')">Pukul Orang</div>
         <div class="option" onclick="showSection('mood')">Mood Check</div>
     </div>
 
@@ -329,18 +328,6 @@ textarea:focus{
 
         <button onclick="releaseText()">Buang Semuanya</button>
         <p id="releaseMessage" style="margin-top:15px;"></p>
-    </div>
-
-    <!-- PUKUL ORANG -->
-    <div id="pukul" class="heal-section hidden">
-
-        <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;">
-            <img src="tukang-sayur.jpg" class="punchable">
-            <img src="foto-kamu.jpg" class="punchable">
-            <img src="random.jpg" class="punchable">
-        </div>
-
-        <button onclick="resetPunch()">Back Kalau Udah Puas</button>
     </div>
 
     <!-- MOOD CHECK -->
@@ -414,48 +401,35 @@ function releaseText(){
     },600);
 }
 
-// PUKUL ORANG
-document.querySelectorAll(".punchable").forEach(img=>{
-    img.addEventListener("click", ()=>{
-        img.classList.add("shake");
-        setTimeout(()=>img.classList.remove("shake"),400);
-    });
-});
-
-function resetPunch(){
-    document.querySelectorAll(".heal-section")
-        .forEach(sec => sec.classList.add("hidden"));
-}
-
 // MOOD CHECK
 const moodMessages = {
     kesel:[
-        "Wajar banget kamu kesel.",
-        "Kesel itu tanda kamu peduli.",
-        "Tarik napas dulu, pelan-pelan.",
-        "Nggak apa-apa buat marah.",
-        "Yang bikin kesel nggak lebih penting dari kamu."
+        "Wajar banget kamu kesel. Pintu rumah malah jadi tempat jualan, terus kena kandang burung… itu ngeselin banget sih.",
+        "‘Untung masih deket’ bukan solusi 😭 kamu tetap yang harus bersihin dan jadi telat.",
+        "Udah buru-buru malah kena apes beruntun. Siapa juga nggak naik darah.",
+        "Combo tukang sayur, kandang burung, telat, sampai nunggu 30 menit? Itu mah ujian kesabaran.",
+        "Kamu nggak lebay kok. Itu emang pagi yang nyebelin banget."
     ],
     capek:[
-        "Kamu udah berusaha banyak hari ini.",
-        "Capek itu valid.",
-        "Istirahat itu bukan kalah.",
-        "Peluk virtual dulu ya.",
-        "Besok bisa pelan-pelan lagi."
+        "Capeknya pasti dobel, fisik kena kotoran, mental kena sikap orang.",
+        "Udah repot ganti baju, gosok dulu, terus masih harus ngejar waktu. Melelahkan banget.",
+        "Dari rumah sampai stasiun rasanya nggak ada yang lancar ya 😭 pantes capek.",
+        "Nunggu 30 menit setelah semua drama itu pasti makin draining.",
+        "Kamu udah berusaha tetap jalanin semuanya, itu keren sih."
     ],
     numb:[
-        "Kadang mati rasa itu mekanisme bertahan.",
-        "Pelan-pelan aja, nggak harus ngerasa apa-apa dulu.",
-        "Numb bukan berarti kamu lemah.",
-        "Take your time.",
-        "Kamu tetap berharga."
+        "Kalau sekarang rasanya kosong aja, itu wajar. Tadi kebanyakan plot twist.",
+        "Kadang kalau terlalu kesel malah jadi mati rasa dulu. Itu normal kok.",
+        "Mungkin kamu lagi overload pagi ini.",
+        "Numb bukan berarti kamu nggak peduli, cuma lagi butuh jeda.",
+        "Pelan-pelan aja, nggak harus langsung baik-baik aja."
     ],
     membaik:[
-        "Pelan-pelan membaik itu progress.",
-        "Aku bangga kamu masih bertahan.",
-        "Keep going yaa.",
-        "Sedikit membaik tetap berarti.",
-        "Hari ini mungkin nggak sempurna, tapi kamu kuat."
+        "Kalau sekarang udah agak mendingan, itu progress banget.",
+        "Kamu berhasil lewatin pagi chaos itu, proud of you.",
+        "Sedikit membaik tetap berarti kok.",
+        "Masih ada sisa hari buat jadi lebih baik.",
+        "Dari semua drama tadi, kamu tetap lanjut jalan. Itu kuat banget."
     ]
 };
 
@@ -485,4 +459,5 @@ function checkMood(mood){
 </script>
 
 </body>
+
 </html>
