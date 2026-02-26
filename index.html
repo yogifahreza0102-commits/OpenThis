@@ -236,6 +236,39 @@ textarea:focus{
     opacity:0;
     transition:opacity 0.5s ease;
 }
+
+/* HEALING WHATSAPP BOX */
+.healing-wa-box{
+    margin-top:60px;
+    padding:22px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.06);
+    text-align:center;
+    backdrop-filter:blur(10px);
+}
+
+.healing-wa-box p{
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:16px;
+    opacity:0.9;
+}
+
+.healing-wa-btn{
+    display:inline-block;
+    padding:12px 28px;
+    border-radius:30px;
+    background:#25D366;
+    color:#111;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.healing-wa-btn:hover{
+    background:#1ebe5d;
+    transform:scale(1.05);
+}
 </style>
 </head>
 
@@ -315,13 +348,11 @@ textarea:focus{
     <h1>Healing Room 🌿</h1>
     <div class="divider"></div>
 
-    <!-- MENU BUTTONS -->
     <div class="option-container" style="margin-bottom:40px;">
         <div class="option" onclick="showSection('write')">Write & Release</div>
         <div class="option" onclick="showSection('mood')">Mood Check</div>
     </div>
 
-    <!-- WRITE & RELEASE -->
     <div id="write" class="heal-section hidden">
         <textarea id="releaseText" placeholder="Tulis semua kekesalanmu di sini. Nggak ada yang ngejudge..."
         style="width:100%;height:100px;border-radius:15px;padding:15px;background:#333;color:white;border:none;resize:none;"></textarea>
@@ -330,26 +361,31 @@ textarea:focus{
         <p id="releaseMessage" style="margin-top:15px;"></p>
     </div>
 
-    <!-- MOOD CHECK -->
-<div id="mood" class="heal-section hidden">
-
-    <div class="option-container">
-        <div class="option" onclick="checkMood('kesel')">Kesel</div>
-        <div class="option" onclick="checkMood('capek')">Capek</div>
-        <div class="option" onclick="checkMood('numb')">Numb</div>
-        <div class="option" onclick="checkMood('membaik')">Sedikit Membaik</div>
+    <div id="mood" class="heal-section hidden">
+        <div class="option-container">
+            <div class="option" onclick="checkMood('kesel')">Kesel</div>
+            <div class="option" onclick="checkMood('capek')">Capek</div>
+            <div class="option" onclick="checkMood('numb')">Numb</div>
+            <div class="option" onclick="checkMood('membaik')">Sedikit Membaik</div>
+        </div>
     </div>
 
-</div>
+    <div id="moodCenter">
+        <p id="moodMessage"></p>
+    </div>
 
-<!-- CENTER MESSAGE AREA -->
-<div id="moodCenter">
-    <p id="moodMessage"></p>
-</div>
+    <!-- WHATSAPP SUPPORT BOX (PINDAH KE SINI) -->
+    <div class="healing-wa-box">
+        <p>Hope u feel better after this 🤍</p>
+        <a class="healing-wa-btn"
+           href="https://wa.me/6282232923136?text=aku%20lagi%20pengen%20cerita"
+           target="_blank">
+           💬 Kirim Pesan ke Aku
+        </a>
+    </div>
 
   </div>
 </div>
-
 <script>
 
 let noClickCount = 0;
@@ -461,5 +497,6 @@ function checkMood(mood){
 </body>
 
 </html>
+
 
 
